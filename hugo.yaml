@@ -1,6 +1,8 @@
 baseURL: https://ubc-aviary.com
 languageCode: en-us
 title: UBC Aviary
+relativeURLs: true
+canonifyURLs: true
 
 security:
   enableInlineShortcodes: true
