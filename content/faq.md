@@ -2,11 +2,7 @@
 title: "FAQ"
 ---
 ### Can I climb here if I've never rock climbed before?
-There are four things you need to do to climb here:
-1. **Sign a waiver:** You can do this in the **Waivers** section of this website.
-2. **Learn to belay:** Check the **Lessons** section, then pass a belay test.
-3. **Get the gear:** You'll need rock shoes, a harness, and a belay device. You can buy these at outdoor stores in Vancouver or rent them for cheap here at the Aviary (see **Membership**).
-4. **Pay up:** Buy a membership or pay a drop-in fee.
+Yes, beginners are always welcome. You'll need to pass a test to belay your partner, so consider signing up for a [Lesson](/lessons).
 
 ---
 
