@@ -22,7 +22,7 @@ Fill out this <a href="https://forms.gle/mbM13dPJamynhKU26" target="_blank">form
 {{< callout type="info" >}}
 ### Volunteering at the Aviary
 
-Applications are currently closed.
+Applications are currently open. Please fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLScKsVY8T8BPakwAektneOft713lWbewjgy3U8zLd-g8CrzZCA/viewform?usp=sharing&ouid=113775061356071756409" target="_blank">form</a>.
 {{< /callout >}}
 
 
