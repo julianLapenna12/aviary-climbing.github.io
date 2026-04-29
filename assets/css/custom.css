@@ -1,0 +1,272 @@
+/* ===================================================================
+   Routes page — table, filters, and floorplan styles
+   =================================================================== */
+
+:root {
+  --route-bg: #f8f9fa;
+  --route-bg-hover: #f0f1f3;
+  --route-border: #e2e5e9;
+  --route-text: #1a1a2e;
+  --route-muted: #6b7280;
+  --route-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --route-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --route-accent: #2F7FBA;
+  --grade-beginner: #16a34a;
+  --grade-intermediate: #837a01;
+  --grade-advanced: #a03504;
+  --grade-expert: #660639;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --route-bg: #1e1e2e;
+  --route-bg-hover: #2a2a3c;
+  --route-border: #3a3a4c;
+  --route-text: #e2e5e9;
+  --route-muted: #9ca3af;
+  --route-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --route-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Floorplan ── */
+.floorplan {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+.floorplan img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--route-border);
+  display: block;
+}
+
+/* ── Filters ── */
+.routes-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.routes-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.grade-filter-btn {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--route-border);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--route-bg);
+  color: var(--route-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.grade-filter-btn:hover,
+.grade-filter-btn.grade-all:hover {
+  background: var(--route-bg-hover);
+  color: var(--route-text);
+  border-color: var(--route-border);
+}
+.grade-filter-btn.active {
+  background: var(--route-accent);
+  color: #fff;
+  border-color: var(--route-accent);
+}
+.grade-filter-btn.grade-all {
+  background: var(--route-accent);
+  color: #fff;
+  border-color: var(--route-accent);
+}
+.grade-filter-btn.grade-beginner.active { background: var(--grade-beginner); border-color: var(--grade-beginner); }
+.grade-filter-btn.grade-intermediate.active { background: var(--grade-intermediate); border-color: var(--grade-intermediate); }
+.grade-filter-btn.grade-advanced.active { background: var(--grade-advanced); border-color: var(--grade-advanced); }
+.grade-filter-btn.grade-expert.active { background: var(--grade-expert); border-color: var(--grade-expert); }
+
+/* ── Count ── */
+.routes-count {
+  font-size: 0.85rem;
+  color: var(--route-muted);
+  margin: 0 0 0.75rem 0;
+}
+
+/* ── Table (desktop) ── */
+.routes-table-wrapper {
+  display: block;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--route-border);
+}
+.routes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.routes-table thead {
+  background: var(--route-bg);
+}
+.routes-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--route-muted);
+  border-bottom: 2px solid var(--route-border);
+}
+.routes-table td,
+.routes-table th {
+  white-space: nowrap;
+}
+.routes-table td:nth-child(3),
+.routes-table th:nth-child(3) {
+  width: 100%;
+  white-space: normal;
+}
+.routes-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--route-border);
+  vertical-align: middle;
+}
+.routes-table th:first-child,
+.routes-table td:first-child {
+  padding-left: 1.5rem;
+}
+.routes-table th:last-child,
+.routes-table td:last-child {
+  padding-right: 1.5rem;
+}
+.routes-table tbody tr {
+  transition: background 0.15s;
+}
+.routes-table tbody tr:hover {
+  background: var(--route-bg-hover);
+}
+.routes-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.routes-table tbody tr.anchor-group-start td {
+  border-top: 2px solid var(--route-border);
+}
+
+/* ── Colour dot ── */
+.colour-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+.colour-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Grade badge ── */
+.grade-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+}
+.grade-beginner { background: var(--grade-beginner); }
+.grade-intermediate { background: var(--grade-intermediate); }
+.grade-advanced { background: var(--grade-advanced); }
+.grade-expert { background: var(--grade-expert); }
+
+/* ── Cards (mobile) ── */
+.routes-cards {
+  display: none;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.route-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--route-border);
+  border-radius: 12px;
+  background: var(--route-bg);
+  box-shadow: var(--route-card-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.route-card:hover {
+  box-shadow: var(--route-card-shadow-hover);
+  transform: translateY(-1px);
+}
+.route-card .colour-dot {
+  width: 18px;
+  height: 18px;
+}
+.route-card-body {
+  flex: 1;
+  min-width: 0;
+}
+.route-card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.route-card-meta {
+  font-size: 0.8rem;
+  color: var(--route-muted);
+  margin-top: 2px;
+}
+.route-card .grade-badge {
+  flex-shrink: 0;
+}
+
+/* ── Loading ── */
+.routes-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  color: var(--route-muted);
+}
+.routes-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--route-border);
+  border-top-color: var(--route-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── No results ── */
+.routes-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--route-muted);
+  font-size: 0.95rem;
+}
+
+/* ── Fallback iframe ── */
+.routes-fallback-iframe {
+  border: 1px solid var(--route-border);
+  border-radius: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .routes-table-wrapper { display: none; }
+  .routes-cards { display: flex; }
+  .routes-filters { flex-direction: column; align-items: stretch; }
+  .routes-grade-filters { justify-content: flex-start; }
+}
