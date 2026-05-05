@@ -4,9 +4,9 @@
 
 :root {
   --route-bg: #f8f9fa;
-  --route-bg-hover: #f0f1f3;
+  --route-bg-hover: #c2c2c3;
   --route-border: #e2e5e9;
-  --route-text: #1a1a2e;
+  --route-text: #e2e5e9;
   --route-muted: #6b7280;
   --route-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   --route-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
